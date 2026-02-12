@@ -30,28 +30,26 @@ To design a computation engine capable of determining daily Sunrise and Sunset t
 # Mathematical Model
 
 - Solar Declination
-δ = 23.45 × sin[(360/365) × (N − 81)]
+  δ = 23.45 × sin[(360/365) × (N − 81)]
 
-Where:
-N = Day of Year
+  Where:
+  N = Day of Year
 
 - Hour Angle
-cos(H) = (sin(h₀) − sin(lat) × sin(δ)) / (cos(lat) × cos(δ))
+  cos(H) = (sin(h₀) − sin(lat) × sin(δ)) / (cos(lat) × cos(δ))
 
-Where:
-H = Hour Angle  
-h₀ = -0.83° (Sun altitude including refraction)
+  Where:
+  H = Hour Angle  
+  h₀ = -0.83° (Sun altitude including refraction)
 
 - Equation of Time
-EoT = 9.87sin(2B) − 7.53cos(B) − 1.5sin(B)
-
-B = (360/365) × (N − 81)
+  EoT = 9.87sin(2B) − 7.53cos(B) − 1.5sin(B)
+  B = (360/365) × (N − 81)
 
 - Final Sunrise / Sunset (IST)
 
-Sunrise = 12 − (H/15) + Longitude Correction − (EoT/60)
-
-Sunset  = 12 + (H/15) + Longitude Correction − (EoT/60)
+  Sunrise = 12 − (H/15) + Longitude Correction − (EoT/60)
+  Sunset  = 12 + (H/15) + Longitude Correction − (EoT/60)
 
 # Program Features 
 
